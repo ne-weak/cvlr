@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - КАВАЛЕРИЯ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-slate-100 to-white min-h-screen overflow-x-hidden">
+    <nav class="fixed top-0 w-full bg-white/50 backdrop-blur-3xl border-b border-slate-200/50 shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-slate-900">КАВАЛЕРИЯ</div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html" class="text-slate-700 hover:text-slate-900 transition duration-300">Главная</a>
+                <a href="about.html" class="text-slate-700 hover:text-slate-900 transition duration-300">О нас</a>
+                <a href="help.html" class="text-slate-700 hover:text-slate-900 transition duration-300">Обращение за помощью</a>
+                <button onclick="toggleAuthMenu()" class="px-6 py-2 bg-slate-200/60 backdrop-blur-md text-slate-900 rounded-full hover:bg-slate-300/60 transition duration-300 border border-slate-300/50">
+                    <span id="authBtn">Войти</span>
+                </button>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 text-2xl">☰</button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white/40 backdrop-blur-md border-t border-slate-200/50">
+            <a href="index.html" class="block px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">Главная</a>
+            <a href="about.html" class="block px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">О нас</a>
+            <a href="help.html" class="block px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">Обращение за помощью</a>
+            <button onclick="toggleAuthMenu()" class="block w-full text-left px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">
+                <span id="authBtnMobile">Войти</span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="welcomeMessage" class="hidden fixed top-20 left-4 right-4 md:left-8 md:right-8 bg-white/70 backdrop-blur-xl text-slate-900 px-6 py-3 rounded-full shadow-xl z-40 border border-slate-200/50">
+        Добро пожаловать!
+    </div>
+
+    <div class="pt-20">
+        <section class="px-4 md:px-8 py-16 md:py-24 text-center max-w-5xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">О нас</h1>
+            <p class="text-lg text-gray-700">Познакомьтесь с ключевыми лицами нашего содружества</p>
+        </section>
+
+        <section class="px-4 md:px-8 py-12 md:py-16 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white shadow-lg rounded-2xl p-8">
+                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6"></div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-2">Иван Петров</h3>
+                    <p class="text-center text-gray-600 mb-4">Основатель и председатель</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="mailto:ivan@kavaleya.local" class="px-6 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition text-sm">Email</a>
+                        <a href="tel:+79999999999" class="px-6 py-2 bg-gray-300 text-gray-900 rounded-full hover:bg-gray-400 transition text-sm">Телефон</a>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-8">
+                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6"></div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-2">Мария Сидорова</h3>
+                    <p class="text-center text-gray-600 mb-4">Заместитель председателя</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="mailto:maria@kavaleya.local" class="px-6 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition text-sm">Email</a>
+                        <a href="tel:+79999999998" class="px-6 py-2 bg-gray-300 text-gray-900 rounded-full hover:bg-gray-400 transition text-sm">Телефон</a>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-8">
+                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6"></div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-2">Алексей Волков</h3>
+                    <p class="text-center text-gray-600 mb-4">Координатор проектов</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="mailto:alex@kavaleya.local" class="px-6 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition text-sm">Email</a>
+                        <a href="tel:+79999999997" class="px-6 py-2 bg-gray-300 text-gray-900 rounded-full hover:bg-gray-400 transition text-sm">Телефон</a>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-8">
+                    <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-6"></div>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-2">Елена Морозова</h3>
+                    <p class="text-center text-gray-600 mb-4">Отношения с молодёжью</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="mailto:elena@kavaleya.local" class="px-6 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition text-sm">Email</a>
+                        <a href="tel:+79999999996" class="px-6 py-2 bg-gray-300 text-gray-900 rounded-full hover:bg-gray-400 transition text-sm">Телефон</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-4 md:px-8 py-20">
+            <div class="text-center text-slate-500">
+                <p class="text-sm">© 2026 Содружество «Кавалерия», г. Воронеж</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="authOverlay" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn">
+        <div class="bg-slate-800/60 backdrop-blur-3xl rounded-3xl shadow-2xl max-w-sm w-full p-8 border border-slate-700/30 animate-scaleIn">
+            <button onclick="toggleAuthMenu()" class="float-right text-slate-400 hover:text-slate-200 text-2xl transition">✕</button>
+            <div class="clear-both">
+                <div class="flex gap-4 mb-8">
+                    <button onclick="switchAuthTab('login')" class="flex-1 py-2 px-4 rounded-full bg-slate-700/60 text-slate-100 font-semibold hover:bg-slate-600/70 transition duration-300 border border-slate-600/40" id="loginTabBtn">Вход</button>
+                    <button onclick="switchAuthTab('register')" class="flex-1 py-2 px-4 rounded-full bg-slate-700/30 text-slate-300 font-semibold hover:bg-slate-700/50 transition duration-300 border border-slate-600/20" id="registerTabBtn">Регистрация</button>
+                </div>
+
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <input type="email" placeholder="Email" required class="w-full mb-4 px-4 py-3 border border-slate-600/30 rounded-2xl bg-slate-900/40 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-slate-500 focus:bg-slate-900/60 transition backdrop-blur-sm">
+                    <input type="password" placeholder="Пароль" required class="w-full mb-6 px-4 py-3 border border-slate-600/30 rounded-2xl bg-slate-900/40 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-slate-500 focus:bg-slate-900/60 transition backdrop-blur-sm">
+                    <button type="submit" class="w-full py-3 bg-slate-700/70 text-slate-100 rounded-full font-semibold hover:bg-slate-600/80 transition duration-300 border border-slate-600/40">Войти</button>
+                </form>
+
+                <form id="registerForm" class="hidden" onsubmit="handleRegister(event)">
+                    <input type="text" placeholder="Ваше имя" required class="w-full mb-4 px-4 py-3 border border-slate-600/30 rounded-2xl bg-slate-900/40 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-slate-500 focus:bg-slate-900/60 transition backdrop-blur-sm">
+                    <input type="email" placeholder="Email" required class="w-full mb-4 px-4 py-3 border border-slate-600/30 rounded-2xl bg-slate-900/40 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-slate-500 focus:bg-slate-900/60 transition backdrop-blur-sm">
+                    <input type="password" placeholder="Пароль" required class="w-full mb-6 px-4 py-3 border border-slate-600/30 rounded-2xl bg-slate-900/40 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-slate-500 focus:bg-slate-900/60 transition backdrop-blur-sm">
+                    <button type="submit" class="w-full py-3 bg-slate-700/70 text-slate-100 rounded-full font-semibold hover:bg-slate-600/80 transition duration-300 border border-slate-600/40">Создать аккаунт</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КАВАЛЕРИЯ - Общественное содружество Воронежа</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-slate-100 to-white min-h-screen overflow-x-hidden">
+    <nav class="fixed top-0 w-full bg-white/50 backdrop-blur-3xl border-b border-slate-200/50 shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-slate-900">cavalry</div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html" class="text-slate-700 hover:text-slate-900 transition duration-300">Главная</a>
+                <a href="about.html" class="text-slate-700 hover:text-slate-900 transition duration-300">О нас</a>
+                <a href="help.html" class="text-slate-700 hover:text-slate-900 transition duration-300">Обращение за помощью</a>
+                <button onclick="toggleAuthMenu()" class="px-6 py-2 bg-slate-200/60 backdrop-blur-md text-slate-900 rounded-full hover:bg-slate-300/60 transition duration-300 border border-slate-300/50">
+                    <span id="authBtn">Войти</span>
+                </button>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 text-2xl">☰</button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white/40 backdrop-blur-md border-t border-slate-200/50">
+            <a href="index.html" class="block px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">Главная</a>
+            <a href="about.html" class="block px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">О нас</a>
+            <a href="help.html" class="block px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">Обращение за помощью</a>
+            <button onclick="toggleAuthMenu()" class="block w-full text-left px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">
+                <span id="authBtnMobile">Войти</span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="welcomeMessage" class="hidden fixed top-20 left-4 right-4 md:left-8 md:right-8 bg-white/70 backdrop-blur-xl text-slate-900 px-6 py-3 rounded-full shadow-xl z-40 border border-slate-200/50">
+        Добро пожаловать!
+    </div>
+
+    <div class="pt-20">
+        <section class="px-4 md:px-8 py-16 md:py-24 text-center max-w-5xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-slate-900 via-slate-700 to-slate-800 bg-clip-text text-transparent mb-6">КАВАЛЕРИЯ</h1>
+            <p class="text-lg md:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto">
+                «Кавалерия» — это общественное содружество, объединяющее неравнодушную молодёжь города Воронежа. Наша цель — защита здорового общества, поддержка молодых людей и противодействие разрушительным явлениям, которые подрывают будущее города.
+            </p>
+        </section>
+
+        <section class="px-4 md:px-8 py-12 md:py-16 max-w-5xl mx-auto">
+            <div class="bg-white/50 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-slate-200/60 shadow-xl hover:shadow-2xl transition duration-500 hover:bg-white/60">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Наши ценности</h2>
+                <p class="text-slate-700 mb-6 text-lg leading-relaxed">
+                    Участники «Кавалерии» — это ассоциация слов честь и справедливость. Для нас это не лозунги, а принципы, по которым мы живём и действуем:
+                </p>
+                <ul class="space-y-4 text-slate-700">
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-900 transition">уважение к людям и к своему городу</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-900 transition">ответственность за свои поступки</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-900 transition">честность перед собой и обществом</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-900 transition">справедливое отношение к окружающим</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="px-4 md:px-8 py-12 md:py-16 max-w-5xl mx-auto">
+            <div class="bg-white/50 backdrop-blur-2xl text-slate-900 rounded-3xl p-8 md:p-12 border border-slate-200/60 shadow-xl hover:shadow-2xl transition duration-500 hover:bg-white/60">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">Чем мы занимаемся</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-700 transition">Поддерживаем инициативы, направленные на здоровый и осознанный образ жизни</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-700 transition">Противостоим распространению наркотиков, деградации и аморального влияния</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-700 transition">Помогаем молодёжи найти правильные ориентиры</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-700 transition">Продвигаем спорт, дисциплину, культуру и взаимное уважение</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-700 transition">Работаем в рамках закона и общественного диалога</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="px-4 md:px-8 py-12 md:py-16 max-w-5xl mx-auto">
+            <div class="bg-white/50 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-slate-200/60 shadow-xl hover:shadow-2xl transition duration-500 hover:bg-white/60">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Кого мы объединяем</h2>
+                <p class="text-slate-700 text-lg leading-relaxed mb-8">
+                    Нам по пути с теми, кто:
+                </p>
+                <ul class="space-y-4 text-slate-700 mb-10">
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-900 transition">думает о будущем, а не живёт одним днём</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-900 transition">уважает свой район и свой город</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-900 transition">выбирает силу характера, а не слабость зависимости</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <span class="text-slate-400 mt-1">•</span>
+                        <span class="text-lg group-hover:text-slate-900 transition">понимает, что порядок начинается с себя</span>
+                    </li>
+                </ul>
+                <div class="border-l-4 border-slate-400 pl-6 py-4 bg-slate-100/40 rounded-2xl">
+                    <p class="text-lg font-semibold text-slate-900">Возраст и статус не решают. Решает позиция и внутренний стержень.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-4 md:px-8 py-12 md:py-16 max-w-5xl mx-auto">
+            <div class="bg-white/50 backdrop-blur-2xl text-slate-900 rounded-3xl p-8 md:p-12 border border-slate-200/60 shadow-xl hover:shadow-2xl transition duration-500 hover:bg-white/60">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">Наш подход</h2>
+                <p class="text-lg leading-relaxed mb-6 text-slate-700">
+                    Мы не ищем конфликтов. Мы не навязываем взгляды. Мы действуем спокойно, последовательно и по совести.
+                </p>
+                <p class="text-xl font-semibold">
+                    Сильное общество строится на чести и справедливости. Сильный город начинается с ответственных людей. Содружество «Кавалерия» — это выбор тех, кому не всё равно.
+                </p>
+            </div>
+        </section>
+
+        <section class="px-4 md:px-8 py-20">
+            <div class="text-center text-slate-600">
+                <p class="text-sm">© 2026 Содружество «Кавалерия», г. Воронеж</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="authOverlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn">
+        <div class="bg-white/80 backdrop-blur-3xl rounded-3xl shadow-2xl max-w-sm w-full p-8 border border-slate-200/60 animate-scaleIn">
+            <button onclick="toggleAuthMenu()" class="float-right text-slate-500 hover:text-slate-700 text-2xl transition">✕</button>
+            <div class="clear-both">
+                <div class="flex gap-4 mb-8">
+                    <button onclick="switchAuthTab('login')" class="flex-1 py-2 px-4 rounded-full bg-slate-200/80 text-slate-900 font-semibold hover:bg-slate-300/80 transition duration-300 border border-slate-300/50" id="loginTabBtn">Вход</button>
+                    <button onclick="switchAuthTab('register')" class="flex-1 py-2 px-4 rounded-full bg-slate-100/60 text-slate-700 font-semibold hover:bg-slate-200/60 transition duration-300 border border-slate-200/40" id="registerTabBtn">Регистрация</button>
+                </div>
+
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <input type="email" placeholder="Email" required class="w-full mb-4 px-4 py-3 border border-slate-300/60 rounded-2xl bg-white/60 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-slate-400 focus:bg-white/80 transition backdrop-blur-sm">
+                    <input type="password" placeholder="Пароль" required class="w-full mb-6 px-4 py-3 border border-slate-300/60 rounded-2xl bg-white/60 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-slate-400 focus:bg-white/80 transition backdrop-blur-sm">
+                    <button type="submit" class="w-full py-3 bg-slate-300/80 text-slate-900 rounded-full font-semibold hover:bg-slate-400/80 transition duration-300 border border-slate-400/50">Войти</button>
+                </form>
+
+                <form id="registerForm" class="hidden" onsubmit="handleRegister(event)">
+                    <input type="text" placeholder="Ваше имя" required class="w-full mb-4 px-4 py-3 border border-slate-300/60 rounded-2xl bg-white/60 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-slate-400 focus:bg-white/80 transition backdrop-blur-sm">
+                    <input type="email" placeholder="Email" required class="w-full mb-4 px-4 py-3 border border-slate-300/60 rounded-2xl bg-white/60 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-slate-400 focus:bg-white/80 transition backdrop-blur-sm">
+                    <input type="password" placeholder="Пароль" required class="w-full mb-6 px-4 py-3 border border-slate-300/60 rounded-2xl bg-white/60 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-slate-400 focus:bg-white/80 transition backdrop-blur-sm">
+                    <button type="submit" class="w-full py-3 bg-slate-300/80 text-slate-900 rounded-full font-semibold hover:bg-slate-400/80 transition duration-300 border border-slate-400/50">Создать аккаунт</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обращение за помощью - КАВАЛЕРИЯ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-slate-100 to-white min-h-screen overflow-x-hidden">
+    <nav class="fixed top-0 w-full bg-white/50 backdrop-blur-3xl border-b border-slate-200/50 shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-slate-900">КАВАЛЕРИЯ</div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html" class="text-slate-700 hover:text-slate-900 transition duration-300">Главная</a>
+                <a href="about.html" class="text-slate-700 hover:text-slate-900 transition duration-300">О нас</a>
+                <a href="help.html" class="text-slate-700 hover:text-slate-900 transition duration-300">Обращение за помощью</a>
+                <button onclick="toggleAuthMenu()" class="px-6 py-2 bg-slate-200/60 backdrop-blur-md text-slate-900 rounded-full hover:bg-slate-300/60 transition duration-300 border border-slate-300/50">
+                    <span id="authBtn">Войти</span>
+                </button>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 text-2xl">☰</button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white/40 backdrop-blur-md border-t border-slate-200/50">
+            <a href="index.html" class="block px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">Главная</a>
+            <a href="about.html" class="block px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">О нас</a>
+            <a href="help.html" class="block px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">Обращение за помощью</a>
+            <button onclick="toggleAuthMenu()" class="block w-full text-left px-4 py-2 text-slate-700 hover:text-slate-900 transition duration-300">
+                <span id="authBtnMobile">Войти</span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="welcomeMessage" class="hidden fixed top-20 left-4 right-4 md:left-8 md:right-8 bg-white/70 backdrop-blur-xl text-slate-900 px-6 py-3 rounded-full shadow-xl z-40 border border-slate-200/50">
+        Добро пожаловать!
+    </div>
+
+    <div class="pt-20">
+        <section class="px-4 md:px-8 py-16 md:py-24 text-center max-w-5xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Обращение за помощью</h1>
+            <p class="text-lg text-gray-700">Мы здесь, чтобы вас услышать. Заполните форму ниже.</p>
+        </section>
+
+        <section class="px-4 md:px-8 py-12 md:py-16 max-w-2xl mx-auto">
+            <div class="bg-white shadow-lg rounded-2xl p-8 md:p-12">
+                <form onsubmit="handleHelpSubmit(event)" id="helpForm">
+                    <div class="mb-6">
+                        <label class="block text-gray-900 font-semibold mb-3">Ваше имя</label>
+                        <input type="text" placeholder="Введите ваше имя" required class="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:border-gray-700 transition">
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-900 font-semibold mb-3">Контакты для связи</label>
+                        <input type="email" placeholder="Ваш email" required class="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:border-gray-700 transition mb-3">
+                        <input type="tel" placeholder="Ваш телефон (опционально)" class="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:border-gray-700 transition">
+                    </div>
+
+                    <div class="mb-8">
+                        <label class="block text-gray-900 font-semibold mb-3">Описание ситуации</label>
+                        <textarea placeholder="Опишите вашу ситуацию подробнее" required rows="8" class="w-full px-5 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:border-gray-700 transition resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-gray-800 text-white rounded-full font-semibold hover:bg-gray-700 transition text-lg">
+                        Отправить
+                    </button>
+                </form>
+                <div id="formMessage" class="hidden mt-4 p-4 bg-gray-100 text-gray-800 rounded-full text-center">
+                    Спасибо! Ваше обращение принято.
+                </div>
+            </div>
+        </section>
+
+        <section class="px-4 md:px-8 py-20">
+            <div class="text-center text-gray-700">
+                <p class="text-sm">© 2026 Содружество «Кавалерия», г. Воронеж</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="authOverlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn">
+        <div class="bg-white/80 backdrop-blur-3xl rounded-3xl shadow-2xl max-w-sm w-full p-8 border border-slate-200/60 animate-scaleIn">
+            <button onclick="toggleAuthMenu()" class="float-right text-slate-500 hover:text-slate-700 text-2xl transition">✕</button>
+            <div class="clear-both">
+                <div class="flex gap-4 mb-8">
+                    <button onclick="switchAuthTab('login')" class="flex-1 py-2 px-4 rounded-full bg-slate-200/80 text-slate-900 font-semibold hover:bg-slate-300/80 transition duration-300 border border-slate-300/50" id="loginTabBtn">Вход</button>
+                    <button onclick="switchAuthTab('register')" class="flex-1 py-2 px-4 rounded-full bg-slate-100/60 text-slate-700 font-semibold hover:bg-slate-200/60 transition duration-300 border border-slate-200/40" id="registerTabBtn">Регистрация</button>
+                </div>
+
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <input type="email" placeholder="Email" required class="w-full mb-4 px-4 py-3 border border-slate-300/60 rounded-2xl bg-white/60 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-slate-400 focus:bg-white/80 transition backdrop-blur-sm">
+                    <input type="password" placeholder="Пароль" required class="w-full mb-6 px-4 py-3 border border-slate-300/60 rounded-2xl bg-white/60 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-slate-400 focus:bg-white/80 transition backdrop-blur-sm">
+                    <button type="submit" class="w-full py-3 bg-slate-300/80 text-slate-900 rounded-full font-semibold hover:bg-slate-400/80 transition duration-300 border border-slate-400/50">Войти</button>
+                </form>
+
+                <form id="registerForm" class="hidden" onsubmit="handleRegister(event)">
+                    <input type="text" placeholder="Ваше имя" required class="w-full mb-4 px-4 py-3 border border-slate-300/60 rounded-2xl bg-white/60 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-slate-400 focus:bg-white/80 transition backdrop-blur-sm">
+                    <input type="email" placeholder="Email" required class="w-full mb-4 px-4 py-3 border border-slate-300/60 rounded-2xl bg-white/60 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-slate-400 focus:bg-white/80 transition backdrop-blur-sm">
+                    <input type="password" placeholder="Пароль" required class="w-full mb-6 px-4 py-3 border border-slate-300/60 rounded-2xl bg-white/60 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-slate-400 focus:bg-white/80 transition backdrop-blur-sm">
+                    <button type="submit" class="w-full py-3 bg-slate-300/80 text-slate-900 rounded-full font-semibold hover:bg-slate-400/80 transition duration-300 border border-slate-400/50">Создать аккаунт</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
