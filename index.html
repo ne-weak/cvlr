@@ -11,10 +11,11 @@
     <nav class="fixed top-0 w-full bg-white/50 backdrop-blur-3xl border-b border-slate-200/50 shadow-lg z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-slate-900">cavalry</div>
-            <div class="hidden md:flex gap-8 items-center">
-                <a href="index.html" class="text-slate-700 hover:text-slate-900 transition duration-300">Главная</a>
-                <a href="about.html" class="text-slate-700 hover:text-slate-900 transition duration-300">О нас</a>
-                <a href="help.html" class="text-slate-700 hover:text-slate-900 transition duration-300">Обращение за помощью</a>
+            <div class="absolute left-1/2 -translate-x-1/2 flex gap-8">
+                <a href="index.html">Главная</a>
+                <a href="about.html">О нас</a>
+                <a href="help.html">Обращение за помощью</a>
+            </div>
                 <button onclick="toggleAuthMenu()" class="px-6 py-2 bg-slate-200/60 backdrop-blur-md text-slate-900 rounded-full hover:bg-slate-300/60 transition duration-300 border border-slate-300/50">
                     <span id="authBtn">Войти</span>
                 </button>
